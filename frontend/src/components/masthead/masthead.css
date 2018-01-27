@@ -1,0 +1,24 @@
+.masthead {
+  margin-bottom: 50px;
+  padding-top: 40px;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  background-image: url('../../images/header.jpg');
+  position: relative;
+  background-size: cover;
+}
+
+.site-heading {
+  text-align: center;
+  padding: 200px 0;
+  color: white;
+}
+
+.site-heading h1 {
+  font-size: 80px;
+}
+
+.site-heading .subheading {
+  font-size: 30px;
+  font-weight: 300;
+}

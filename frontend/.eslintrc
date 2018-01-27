@@ -1,0 +1,12 @@
+{
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true,
+      "mocha": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": false
+    }
+}
