@@ -10,7 +10,7 @@ export default class Navigation extends Component {
         <div className="container">
           <div className="site-heading">
             <h1>Natalia's blog</h1>
-            <span class="subheading">Just another lifestyle blog</span>
+            <span className="subheading">Just another lifestyle blog</span>
           </div>
         </div>
       </header>

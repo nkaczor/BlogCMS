@@ -1,0 +1,36 @@
+.post-header {
+  color: #fe6482;
+  text-align: center;
+}
+
+.post-info {
+  text-align: center;
+  color: rgb(131, 128, 128);
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.post-content {
+  font-size: 18px;
+  font-family: Lora;
+  text-align: justify;
+}
+
+.post-button {
+  padding: 20px;
+  text-align: center;
+}
+
+.post-button .label {
+  font-size: 13px;
+  font-weight: normal;
+  background-color: #ff7f68;
+  border-radius: 0;
+  padding: 8px 12px;
+}
+
+.post-button.label:hover {
+  background-color: black;
+}
