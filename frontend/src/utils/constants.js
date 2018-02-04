@@ -1,1 +1,3 @@
-export const AUTHOR = 'Natalia';
+export default {
+  AUTHOR: 'Natalia'
+};

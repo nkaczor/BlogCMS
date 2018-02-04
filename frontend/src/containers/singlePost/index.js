@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { push } from 'react-router-redux';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPost } from '../../actions/posts';
 import { getPostWithCommentsById } from '../../selectors/postsSelectors';
 import Post from '../../components/post';
 import Comments from '../../components/comments';
+import { CommentShape, PostShape, PostDefaults } from '../../utils/propTypes';
 
 class SinglePost extends Component {
   componentDidMount() {
@@ -33,6 +35,18 @@ class SinglePost extends Component {
     );
   }
 }
+
+SinglePost.propTypes = {
+  post: PostShape,
+  comments: PropTypes.arrayOf(CommentShape),
+  fetchPost: PropTypes.func.isRequired,
+  match: ReactRouterPropTypes.match.isRequired
+};
+
+SinglePost.defaultProps = {
+  comments: [],
+  post: PostDefaults
+};
 
 function mapStateToProps(state, props) {
   return {

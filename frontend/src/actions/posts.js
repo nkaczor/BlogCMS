@@ -26,8 +26,8 @@ function receivePostsPage(page, data) {
   return {
     type: RECEIVE_POSTS_PAGE,
     posts: data.results,
-    next: data.next,
-    prev: data.previous,
+    next: !!data.next,
+    prev: !!data.previous,
     page
   };
 }
@@ -53,7 +53,6 @@ export const fetchPost = id => {
     return fetch(url)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         dispatch(receivePost(data));
       });
   };

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { PostPropTypes } from '../../utils/propTypes';
 import { Label, PageHeader } from 'react-bootstrap';
 import moment from 'moment';
-import { AUTHOR } from '../../utils/constants';
+import constants from '../../utils/constants';
 import './post.css';
 
 export default class Post extends Component {
   renderButton() {
+    // TODO: extract new component
     const { id, showCommentsButton } = this.props;
 
     if (!showCommentsButton) {
@@ -21,15 +24,17 @@ export default class Post extends Component {
       </Link>
     );
   }
+
   render() {
     const { postTitle, postText, postDate, id } = this.props;
+
     return (
       <div className="post">
         <Link to={`/post/${id}`}>
           <PageHeader className="post-header">
             {postTitle}
             <div className="post-info">
-              Posted by {AUTHOR}, on
+              Posted by {constants.AUTHOR}, on
               <time title={postDate}>
                 {moment(postDate).format(' MMMM Do YYYY')}
               </time>
@@ -42,3 +47,12 @@ export default class Post extends Component {
     );
   }
 }
+
+Post.propTypes = {
+  ...PostPropTypes,
+  showCommentsButton: PropTypes.bool
+};
+
+Post.defaultProps = {
+  showCommentsButton: false
+};

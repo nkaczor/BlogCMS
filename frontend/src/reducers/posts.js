@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { RECEIVE_POSTS_PAGE, RECEIVE_POST } from '../actions/posts';
 
 const posts = (state = {}, action) => {
@@ -13,7 +12,7 @@ const posts = (state = {}, action) => {
       const { id, comments, ...rest } = action.post;
       nextState[id] = {
         id,
-        comments: comments.map(({ id }) => id),
+        comments: comments.map(comment => comment.id),
         ...rest
       };
       return nextState;
