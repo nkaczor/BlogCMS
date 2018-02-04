@@ -1,0 +1,8 @@
+.comments-container {
+  margin: 30px 0;
+}
+
+.comments {
+  width: calc(100% - 200px);
+  margin: 50px auto;
+}

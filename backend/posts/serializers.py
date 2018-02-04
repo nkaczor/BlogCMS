@@ -13,3 +13,9 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Post
         fields = ('post_text', 'post_title', 'post_date', 'id', 'comments')
+
+
+class PostListSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Post
+        fields = ('post_text', 'post_title', 'post_date', 'id')

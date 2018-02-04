@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../../actions/posts';
-import { getPostById } from '../../selectors/postsSelectors';
+import { fetchPost } from '../../actions/posts';
+import { getPostWithCommentsById } from '../../selectors/postsSelectors';
 import Post from '../../components/post';
+import Comments from '../../components/comments';
 
 class SinglePost extends Component {
   componentDidMount() {
@@ -18,14 +19,16 @@ class SinglePost extends Component {
   }
 
   fetchData() {
-    // this.props.fetchPost(this.props.match.params.postId);
+    this.props.fetchPost(this.props.match.params.postId);
   }
 
   render() {
-    const { post } = this.props;
+    const { post, comments } = this.props;
+
     return (
       <div>
         <Post {...post} />
+        <Comments comments={comments} />
       </div>
     );
   }
@@ -33,13 +36,13 @@ class SinglePost extends Component {
 
 function mapStateToProps(state, props) {
   return {
-    post: getPostById(state, props)
+    ...getPostWithCommentsById(state, props)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    ...bindActionCreators({ fetchPosts }, dispatch)
+    ...bindActionCreators({ fetchPost }, dispatch)
   };
 }
 
