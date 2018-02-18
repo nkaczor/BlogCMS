@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import Home from '../home';
 import About from '../about';
 import SinglePost from '../singlePost';
+import Gallery from '../gallery';
 
 import Navigation from '../../components/navigation';
 import Masthead from '../../components/masthead';
@@ -16,6 +17,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <Route path="/page/:pageNumber" component={Home} />
       <Route path="/post/:postId" component={SinglePost} />
+      <Route path="/gallery" component={Gallery} />
       <Route exact path="/about-us" component={About} />
     </main>
   </div>

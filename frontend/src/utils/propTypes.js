@@ -9,6 +9,11 @@ export const PostPropTypes = {
   postDate: PropTypes.string
 };
 
+export const ImagePropTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string
+};
+
 export const CommentPropTypes = {
   commentAuthor: PropTypes.string,
   commentText: PropTypes.string.isRequired,
@@ -19,6 +24,10 @@ export const CommentPropTypes = {
 
 export const PostShape = PropTypes.shape({
   ...PostPropTypes
+});
+
+export const ImageShape = PropTypes.shape({
+  ...ImagePropTypes
 });
 
 export const CommentShape = PropTypes.shape({

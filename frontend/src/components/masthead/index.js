@@ -7,7 +7,7 @@ export default function Masthead() {
       <div className="overlay" />
       <div className="container">
         <div className="site-heading">
-          <h1>Natalia's blog</h1>
+          <h1>Natalia&apos;s blog</h1>
           <span className="subheading">Just another lifestyle blog</span>
         </div>
       </div>

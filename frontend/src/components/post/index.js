@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { PostPropTypes } from '../../utils/propTypes';
-import { Label, PageHeader } from 'react-bootstrap';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
+import { Label, PageHeader } from 'react-bootstrap';
 import constants from '../../utils/constants';
+import { PostPropTypes } from '../../utils/propTypes';
+
 import './post.css';
 
 export default class Post extends Component {
